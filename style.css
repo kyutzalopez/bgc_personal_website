@@ -1,7 +1,7 @@
 /* === PAGE BACKGROUND AND TEXT STYLE === */
 body {
-    font-family: 'Trebuchet MS', Arial, sans-serif; /* 💡 Change the font family for the entire page */
-    background-color: #bfbfbf; /* 🎨 You can change the entire page background color here */
+    font-family: "Courier New", Courier, monospace; /* 💡 Change the font family for the entire page */
+    background-color: #fbecf9; /* 🎨 You can change the entire page background color here */
 }
 
 /* === PARAGRAPH STYLE === */
@@ -47,7 +47,7 @@ a:-webkit-any-link {
 
 /* === YOUR NAME (BIG TEXT) === */
 #name {
-    font-size: 64px; /* 💡 Change this to make your name bigger/smaller */
+    font-size: 50px; /* 💡 Change this to make your name bigger/smaller */
     color: #1a1a1a; /* 🎨 Name text color */
     margin-bottom: 15px;
 }
