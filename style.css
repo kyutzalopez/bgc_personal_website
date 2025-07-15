@@ -1,7 +1,11 @@
 /* === PAGE BACKGROUND AND TEXT STYLE === */
 body {
     font-family: "Courier New", Courier, monospace;
-    background-color: #fbecf9;
+    background-image: url('imgs/flower.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps it locked while scrolling */
 }
 
 /* === PARAGRAPH STYLE === */
@@ -24,7 +28,7 @@ a:-webkit-any-link {
 /* === MAIN CONTAINER BOX (THE CARD) === */
 #container {
     max-width: 400px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: 15px auto;
@@ -44,10 +48,25 @@ a:-webkit-any-link {
 
 /* === PROFILE PICTURE STYLE === */
 #profile-pic {
-    width: 90%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    align-self: center; /* ✅ Keeps image centered */
+  /* existing styles */
+  width: 90%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  align-self: center;
+
+  /* updated animation: 5s cycle with pause */
+  animation: rotatePause 5s linear infinite;
+}
+
+@keyframes rotatePause {
+  /* Rotate smoothly from 0° to 360° over the first 60% (3s) */
+  0%   { transform: rotate(0deg); }
+  60%  { transform: rotate(360deg); }
+
+  /* Hold at 360° until the end of the cycle */
+  100% { transform: rotate(360deg); }
 }
 
 /* === YOUR NAME (BIG TEXT) === */
@@ -70,6 +89,7 @@ a:-webkit-any-link {
 /* === EMAIL SECTION === */
 #email {
     color: #1a1a1a;
+    font-size: 15px;
     margin-bottom: 15px;
     text-align: left;
 }
@@ -162,12 +182,13 @@ h1, h2, h3 {
 }
 
 #background-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
