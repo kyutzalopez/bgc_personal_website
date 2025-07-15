@@ -1,87 +1,99 @@
 /* === PAGE BACKGROUND AND TEXT STYLE === */
 body {
-    font-family: "Courier New", Courier, monospace; /* 💡 Change the font family for the entire page */
-    background-color: #fbecf9; /* 🎨 You can change the entire page background color here */
+    font-family: "Courier New", Courier, monospace;
+    background-color: #fbecf9;
 }
 
 /* === PARAGRAPH STYLE === */
 p {
-    color: #1a1a1a; /* 🎨 Bio and fun fact text color */
-    text-align: center; /* 💡 Like "text center" in Google Docs/Word */
+    color: #1a1a1a;
+    text-align: left; /* 🔄 Change from center to left */
 }
 
 /* === LINK STYLES === */
 a {
     text-decoration: none;
-    color: #404040; /* 💡 All links will appear blue by default */
+    color: #404040;
 }
 
 a:-webkit-any-link {
     text-decoration: none;
-    color: #404040; /* IMPORTANT: make this the same as above! ^^^ */
+    color: #404040;
 }
 
 /* === MAIN CONTAINER BOX (THE CARD) === */
 #container {
-    max-width: 400px; /* 💡 Change this to make the card bigger/smaller */
-    background-color: #f2f2f2; /* 🎨 Card background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 🎨 Adds a soft shadow */
-    border-radius: 10px; /* 💡 Rounded corners */
+    max-width: 400px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     margin: 15px auto;
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 🔄 Aligns all child elements to the left */
 }
 
 /* === "HI, MY NAME IS" HEADING === */
 #name-intro {
-    font-family: 'Courier New', Courier, monospace; /* 💡 Change the font family for the intro text */
-    color: #333333; /* 🎨 Intro text color */
-    margin-bottom: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333333;
+    margin-bottom: 13px;
+    text-align: left; /* Ensures heading is left aligned */
 }
 
 /* === PROFILE PICTURE STYLE === */
 #profile-pic {
-    width: 90%; /* 💡 Resize profile picture here */
-    border-radius: 10px; /* 💡 Rounds the corners of the profile picture */
+    width: 90%;
+    border-radius: 10px;
     margin-bottom: 15px;
+    align-self: center; /* ✅ Keeps image centered */
 }
 
 /* === YOUR NAME (BIG TEXT) === */
 #name {
-    font-size: 50px; /* 💡 Change this to make your name bigger/smaller */
-    color: #1a1a1a; /* 🎨 Name text color */
+    font-size: 40px;
+    color: #1a1a1a;
     margin-bottom: 15px;
+    overflow: hidden;
+    text-align: left;
+    animation: textBlink 1s step-start infinite;
 }
 
 /* === HOMETOWN TEXT === */
 #hometown {
-    color: #4d4d4d; /* 🎨 Hometown text color */
+    color: #4d4d4d;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 /* === EMAIL SECTION === */
 #email {
     color: #1a1a1a;
     margin-bottom: 15px;
+    text-align: left;
 }
 
-#email-link { /* The link to your email */
-    color: #1a1a1a; /* 🎨 Change the color of the email link */
-    text-decoration: underline; 
+#email-link {
+    color: #1a1a1a;
+    text-decoration: underline;
 }
 
-#email-link:hover { /* Change the color of the link when you put your mouse over it */
-    color: #4d4d4d; /* 🎨 Change the hover color of the email link */
+#email-link:hover {
+    color: #4d4d4d;
 }
 
 /* === BIO SECTION === */
 #bio {
-    font-size: 20px; /* 💡 Change the size of your bio text */
-    margin: 10px;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: left;
 }
 
 #fun-fact {
-    font-size: 15px; /* 💡 Change the size of the fun fact text */
-    margin: 10px;
+    font-size: 15px;
+    margin: 10px 0;
+    text-align: left;
 }
 
 /* === BACKGROUND IMAGE STYLE === */
@@ -89,81 +101,40 @@ a:-webkit-any-link {
     background-image: url("[PUT A URL HERE !!!]");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* === TYPING EFFECT === */
+.typed-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #1a1a1a;
+    white-space: nowrap;
+    animation: typingErasing 6s steps(30, end) infinite;
+    max-width: 100%;     /* Constrain to container width */
+    box-sizing: border-box;
+}
+
+@keyframes typingErasing {
+  0% {
+    width: 0;
+    border-color: #1a1a1a;
+  }
+  50% {
+    width: 100%;
+    border-color: #1a1a1a;
+  }
+  55% {
+    border-color: transparent;
+  }
+  100% {
+    width: 0;
+    border-color: transparent;
+  }
+}
+
+@keyframes textBlink {
+    50% {
+        opacity: 0;
+    }
+}
 
 
 /* === Don't Touch! (your website will totally explode) === */
@@ -180,13 +151,14 @@ h1, h2, h3 {
 #container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* 🔄 This replaces center alignment */
 }
 
 #profile-pic {
-    aspect-ratio: 1 / 1; /* Makes the image a square */
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
+    align-self: center; /* ✅ Keeps image centered */
 }
 
 #background-img {
@@ -195,7 +167,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Makes sure background stays behind everything else */
-    background-size: cover; /* Makes sure image covers the whole background */
+    z-index: -1;
+    background-size: cover;
     background-position: center;
 }
